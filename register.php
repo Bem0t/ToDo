@@ -14,15 +14,18 @@ session_start();
   <!-- Форма РЕгистрации -->
   <form action="/vendor/signup.php" method="post">
     <label for="">Логин</label>
-    <input type="text" name="login" placeholder="Введите логин">
+    <input type="text" name="login" pattern="[A-Za-z]{5,}" title="5 символов минимум и ввод только латинских букв"  placeholder="Введите логин" required>
+    <label for="">Почта</label>
+    <input type="email" name = "email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}" title="text@text.2-4 символа" placeholder="email" required>
     <label for="">Пароль</label>
-    <input type="password" name="password" placeholder="Введите пароль">
+    <input type="password" name="password" pattern=".{5,}" title="5 символов минимум" placeholder="Введите пароль" required>
     <label for="">Подтверждение пароля</label>
-    <input type="password" name="password_confirm" placeholder="Подтвердите пароль">
+    <input type="password" name="password_confirm" pattern=".{5,}" title="5 символов минимум" placeholder="Подтвердите пароль" required>
     <button type="submit">Регистрация</button>
     <p>
       У вас уже есть аккаунт? -  <a href="index.php">Войдите</a>
     </p>
+    <p class="mail-check"></p>
     <?php
     if($_SESSION['message']){
       echo '<p class="msg">'.$_SESSION['message'].'</p>';
@@ -30,6 +33,6 @@ session_start();
     unset($_SESSION['message']);
     ?>
   </form>
-
+<script src="./assets/js/checkMail.js"></script>
 </body>
 </html>

@@ -46,15 +46,26 @@
         <div class="ToDo-lists__history history-box lists">
           <div class="history-box__list">
             <ul class="todo-h">
-
             </ul>
           </div>
         </div>
       </div>
     </div>
   </main>
+  <div id="popup" class="popup">
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="#" class="popup__close">X</a>
+        <div class="popup__title">
+          Ого!
+        </div>
+        <div class="popup__text">
+          В вашей задаче была обнаружена ненормативная лексика😢 и нам пришлось ее удалить
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="./js/app.min.js"></script>
-
 </body>
 
 </html>
